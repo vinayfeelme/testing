@@ -16,7 +16,7 @@ RESET='\033[0m'         # Reset to default color
 
 #Current Running SID Output Location: /tmp/sid.out
 # Define the path to the source file
-source_file="https://raw.githubusercontent.com/vinayfeelme/testing/main/config.txt"  # Replace with the actual path to your source file
+source_file="./testing/main/config.txt"  # Replace with the actual path to your source file
 
 # Check if the source file exists
 if [ ! -f "$source_file" ]; then
