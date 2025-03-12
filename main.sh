@@ -16,10 +16,12 @@ RESET='\033[0m'         # Reset to default color
 
 #Current Running SID Output Location: /tmp/sid.out
 # Define the path to the source file
-source_file="main/config.txt"  # Replace with the actual path to your source file
+source_url="https://raw.githubusercontent.com/vinayfeelme/testing/main/config.txt"  # Replace with the actual path to your source file
+
+curl -sSL "$source_url" -o /tmp/config.txt
 
 # Check if the source file exists
-if [ ! -f "$source_file" ]; then
+if [ ! -f "/tmp/config.txt" ]; then
     echo "Error: Source file $source_file not found. Please ensure the file exists."
     exit 1
 fi
