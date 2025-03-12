@@ -1,0 +1,43 @@
+recipient1="infra-oracle@haleon.com"
+
+email_list1=(
+    "SANDEEP=sandeep.x.tomar@haleon.com
+    VINAY=vinay.3.kumar@haleon.com
+    ARISA=arisatanaveer.x.pathan@haleon.com
+    PREM=premkumar.x.singh@haleon.com
+    SUJOY=sujoy.x.rajjak@haleon.com
+    ARCHIT=archit.x.choudhary@haleon.com
+    PRASHANT=prashant.2.kumar@haleon.com
+    SNEHITH=snehith.x.birkur@haleon.com"
+)
+
+email_list2=(
+    ["SANDEEP"]="sandeep.x.tomar@haleon.com"
+    ["VINAY"]="vinay.3.kumar@haleon.com"
+    ["ARISA"]="arisatanaveer.x.pathan@haleon.com"
+    ["PREM"]="premkumar.x.singh@haleon.com"
+    ["SUJOY"]="sujoy.x.rajjak@haleon.com"
+    ["ARCHIT"]="archit.x.choudhary@haleon.com"
+    ["PRASHANT"]="prashant.2.kumar@haleon.com"
+    ["SNEHITH"]="snehith.x.birkur@haleon.com"
+)
+
+allowed_user=("SANDEEP" "VINAY" "ARISA" "PREM" "SUJOY" "ARCHIT" "PRASHANT" "SNEHITH")  # List of allowed users (ABC and XYZ)
+names=("SANDEEP" "VINAY" "ARISA" "PREM" "SUJOY" "ARCHIT" "PRASHANT" "SNEHITH")  # List of allowed users (ABC and XYZ)
+
+email_list=("sandeep.x.tomar@haleon.com" "vinay.3.kumar@haleon.com" "arisatanaveer.x.pathan@haleon.com" "premkumar.x.singh@haleon.com" "sujoy.x.rajjak@haleon.com" "archit.x.choudhary@haleon.com" "prashant.2.kumar@haleon.com" "snehith.x.birkur@haleon.com" )
+
+PATCH_RELEASE=19.26.0.0.0
+COMBO_ZIP="p37262172_190000_Linux-x86-64.zip"
+#RU_ZIP="p36912597_190000_Linux-x86-64.zip"                   # Replace with your OPatch zip file - Static
+#OJVM_ZIP="p36878697_190000_Linux-x86-64.zip"                 # Replace with your OPatch zip file - Static
+JDK_ZIP="p37213431_190000_Linux-x86-64.zip"                 # Replace with your OPatch zip file - Static
+OPATCH_ZIP="p6880880_190000_Linux-x86-64.zip"                # Replace with your OPatch zip file - Static
+
+
+COMBO_PATCH_DIR=37262172                                    # Directory containing the patch zip file - Static
+RU_PATCH_ID=37260974                                         # RU Patch ID - Static
+OJVM_PATCH_ID=37102264                                       # OJVM Patch ID - Static
+JDK_PATCH_ID=37213431                                       # JDK Patch ID - Static
+
+
