@@ -111,6 +111,7 @@ else
     echo "Hello, $name! Proceeding with the patching process..."
 fi
 
+
 # Convert the entered name to uppercase
 name=$(echo "$name" | tr 'a-z' 'A-Z')
 
