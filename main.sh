@@ -95,17 +95,6 @@ echo "##########################################################################
 echo
 
 
-# Define color for prompt (if using colors)
-CYAN="\033[0;36m"
-RESET="\033[0m"
-
-# Ask for user's name with a 20-second timeout
-echo -n -e "${CYAN}PLEASE ENTER YOUR NAME (You have 20 seconds to respond): ${RESET}"
-
-# Start a timer and wait for user input
-start_time=$(date +%s)
-
-# Wait for input up to 20 seconds or until timeout
 name=${1:-""}
 if [ -z "$name" ]; then
     echo -n -e "PLEASE ENTER YOUR NAME (You have 20 seconds to respond): "
@@ -115,17 +104,6 @@ fi
 if [ -z "$name" ]; then
     echo "No response received. Exiting the automated patching script."
     exit 1
-fi
-# Calculate how long the user took to respond
-end_time=$(date +%s)
-elapsed_time=$((end_time - start_time))
-
-# Check if the user responded within 20 seconds or left the input blank
-if [ -z "$name" ]; then
-    echo "No response received within 20 seconds or input was blank. Exiting the automated patching script."
-    exit 1
-else
-    echo "Hello, $name! Proceeding with the patching process..."
 fi
 
 
