@@ -95,15 +95,16 @@ echo "##########################################################################
 echo
 
 
-name=${1:-""}
+name=${1:-"DEFAULT_USER"}
 if [ -z "$name" ]; then
     echo -n -e "PLEASE ENTER YOUR NAME (You have 20 seconds to respond): "
     read -t 20 name
 fi
 
+# If still empty, use a default value instead of exiting
 if [ -z "$name" ]; then
-    echo "No response received. Exiting the automated patching script."
-    exit 1
+    name="DEFAULT_USER"
+    echo "No response received. Proceeding with default name: $name"
 fi
 
 
