@@ -99,17 +99,25 @@ echo
 CYAN="\033[0;36m"
 RESET="\033[0m"
 
-# Ask for user's name with a 20-second timeout
+# Ask for user's name and start timer
 echo -n -e "${CYAN}PLEASE ENTER YOUR NAME (You have 20 seconds to respond): ${RESET}"
-read -t 20 name
+start_time=$(date +%s)
 
-# Check if the user responded within 20 seconds or left the input blank
-if [ -z "$name" ]; then
-    echo "No response received within 20 seconds or input was blank. Exiting the automated patching script."
-    exit 1
-else
-    echo "Hello, $name! Proceeding with the patching process..."
-fi
+# Wait for user input for 20 seconds or until a name is provided
+while true; do
+    current_time=$(date +%s)
+    elapsed_time=$((current_time - start_time))
+    if [ $elapsed_time -ge 20 ]; then
+        echo "Timeout reached. Exiting the automated patching script."
+        exit 1
+    fi
+    read -t 1 name  # Poll every second
+    if [ ! -z "$name" ]; then
+        echo "Hello, $name! Proceeding with the patching process..."
+        break
+    fi
+done
+
 
 
 # Convert the entered name to uppercase
