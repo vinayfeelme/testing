@@ -95,14 +95,20 @@ echo "##########################################################################
 echo
 
 
-# Ask for user's name
-echo -n -e "${CYAN}PLEASE ENTER YOUR NAME (You have 20 Sec): ${RESET}"
+# Define color for prompt (if using colors)
+CYAN="\033[0;36m"
+RESET="\033[0m"
+
+# Ask for user's name with a 20-second timeout
+echo -n -e "${CYAN}PLEASE ENTER YOUR NAME (You have 20 seconds to respond): ${RESET}"
 read -t 20 name
 
-# Check if the user responded within 20 seconds
+# Check if the user responded within 20 seconds or left the input blank
 if [ -z "$name" ]; then
-    echo "It can't be blank. OR No response received within 20 seconds. Exiting the automated patching script."
+    echo "No response received within 20 seconds or input was blank. Exiting the automated patching script."
     exit 1
+else
+    echo "Hello, $name! Proceeding with the patching process..."
 fi
 
 # Convert the entered name to uppercase
